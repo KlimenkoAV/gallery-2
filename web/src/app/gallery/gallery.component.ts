@@ -1,24 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Subject } from 'rxjs';
-import { FileService } from '../../services/file.service';
 import { FileUrl } from '../../models/models';
+import { FileService } from '../../services/file.service';
 
 @Component({
     moduleId: module.id,
     selector: 'gallery',
-    templateUrl: 'gallery.component.html'
+    templateUrl: 'gallery.component.html',
+    styleUrls : ['gallery.component.scss'],
 })
-export class GalleryComponent implements OnInit {
-    public fileToShow: FileUrl[]=[];
-
+export class GalleryComponent {
+    public fileToShow: FileUrl[] = [];
     public mainImage: FileUrl;
-
-    public ok: boolean = false;
-
     public index: number = 0;
-
-    private unsubscribe: Subject<void> = new Subject<void>();
-
+    public unsubscribe: Subject <void> = new Subject<void>();
     private fileService: FileService;
 
     public constructor(fileService: FileService) {
@@ -28,16 +23,10 @@ export class GalleryComponent implements OnInit {
     }
 
     public bind(func: Function, context: GalleryComponent): EventListenerOrEventListenerObject {
-        return function bind(...args: KeyboardEvent[]): Function {
-            return func.apply(context, args);
-        };
+        return  ((...args: KeyboardEvent[]) => func.apply(context, args));
     }
 
-    public onValueChanged(): void{
-        this.updateMainFile(this.fileService.files[this.fileService.files.length - 1]);
-    }
-
-    public ngOnInit(): void{
+    public ngOnInit(): void {
         document.body.addEventListener('keydown', this.bind(function keyDown(event: KeyboardEvent): void {
             if (event.keyCode === 37) {
                 this.previous();
@@ -47,7 +36,12 @@ export class GalleryComponent implements OnInit {
         }, this));
     }
 
-    public updateMainFile(image: FileUrl): void{
+    public onValueChanged(): void {
+        this.updateMainFile(this.fileService.files[this.fileService.files.length - 1]);
+    }
+
+
+    public updateMainFile(image: FileUrl): void {
         this.mainImage = image;
         this.index = this.fileToShow.findIndex((x: FileUrl): boolean => x.url === image.url);
     }

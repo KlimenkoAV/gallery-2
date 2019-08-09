@@ -1,6 +1,4 @@
 <div class="label-wrapp">
     <span class="label m-t-s"> {{current}} из {{count}}</span>
 </div>
-
-
-<img #ref height="400">
+<img [src]='domSanitizer.bypassSecurityTrustUrl(image.url)' height="400">

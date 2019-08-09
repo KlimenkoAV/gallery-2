@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subscriber, BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, Subscriber } from 'rxjs';
 import { FileUrl } from '../models/models';
 @Injectable()
 
 export class FileService {
-    public files: FileUrl[]=[];
+    public files: FileUrl[] = [];
 
     public file = new BehaviorSubject('');
 
@@ -16,6 +16,6 @@ export class FileService {
             observer.next(fileToUpload.name);
             observer.complete();
         });
-        // or httpcontext..........
+
     }
 }

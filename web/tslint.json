@@ -75,5 +75,11 @@
         "max-line-length": {
             "options": [120]
         }
-    }
+    },
+    "linterOptions": {
+      "exclude": [
+          "dist",
+          "node_modules"
+      ]
+  }
 }

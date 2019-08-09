@@ -1,1 +1,1 @@
-<img #ref height="100" (click)="choose()">
+<img [src]='domSanitizer.bypassSecurityTrustUrl(image.url)' height="100" (click)="choose()">

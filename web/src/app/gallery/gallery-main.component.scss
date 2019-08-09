@@ -1,0 +1,14 @@
+
+.label{
+    background-color: rgba(98, 98, 98, 0.45);
+    border-radius: 20px;
+    padding: 10px;
+    position: absolute;
+}
+.label:hover{
+    background-color: rgba(98, 98, 98, 1);
+}
+.label-wrapp{
+    display: flex;
+    justify-content: center;
+}

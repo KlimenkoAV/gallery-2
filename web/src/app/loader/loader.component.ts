@@ -9,17 +9,13 @@ import { FileService } from '../../services/file.service';
 
 })
 export class LoaderComponent {
-
-    public fileService: FileService;
-
     public onDragOverActive: boolean = false;
-
     public warningActive: boolean = false;
+    public fileService: FileService;
 
     public constructor(fileService: FileService) {
         this.fileService = fileService;
     }
-
 
     public onDrop(event: DragEvent): void {
         this.onDragOverActive = false;
