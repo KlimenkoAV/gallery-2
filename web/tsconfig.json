@@ -1,0 +1,31 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+      "declaration": false,
+    "downlevelIteration": true,
+    "importHelpers": true,
+      "target": "es2015",
+      "module": "esnext",
+      "moduleResolution": "node",
+      "sourceMap": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "removeComments": false,
+      "noImplicitAny": false,
+      "typeRoots": [
+        "node_modules/@types"
+      ],
+      "lib": [
+        "dom",
+        "es2018",
+        "es2017",
+        "es2016",
+        "es5",
+        "es6",
+        "es7"
+      ],
+      "baseUrl": "./"
+    }
+  }
+
+  

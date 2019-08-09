@@ -1,0 +1,79 @@
+{
+    "rulesDirectory": [
+        "node_modules/codelyzer"
+      ],
+    "extends": "tslint:recommended",
+    "rules": {
+
+        "new-parens": true,
+        "no-any": true,
+        "no-arg": true,
+        "no-bitwise": true,
+        "no-conditional-assignment": true,
+        "no-consecutive-blank-lines": false,
+        "no-console": {
+            "severity": "warning",
+            "options": ["debug", "info", "log", "time", "timeEnd", "trace"]
+        },
+        "no-trailing-whitespace": true, 
+        "import-spacing": true, 
+        "eofline": true,
+        "quotemark": [ 
+          true,
+          "single",
+          "avoid-escape"
+        ],
+        "object-literal-sort-keys":false,
+        "one-line": [
+          true,
+          "check-open-brace",
+          "check-catch",
+          "check-whitespace"
+        ],
+        "max-line-length": [
+          true,
+          160
+        ],
+        "indent": [
+            true,
+            "spaces",
+            4
+        ],
+        "semicolon": [
+          true,
+          "always"
+        ],
+        "typedef-whitespace": [
+          true,
+          {
+            "call-signature": "nospace",
+            "index-signature": "nospace",
+            "parameter": "nospace",
+            "property-declaration": "nospace",
+            "variable-declaration": "nospace"
+          },
+          {
+            "call-signature": "onespace",
+            "index-signature": "onespace",
+            "parameter": "onespace",
+            "property-declaration": "onespace",
+            "variable-declaration": "onespace"
+          }
+        ],
+        "whitespace": [
+          true,
+          "check-branch",
+          "check-decl",
+          "check-operator",
+          "check-module",
+          "check-separator",
+          "check-type",
+          "check-preblock"
+        ]   
+    },
+    "jsRules": {
+        "max-line-length": {
+            "options": [120]
+        }
+    }
+}

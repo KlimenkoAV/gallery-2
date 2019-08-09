@@ -1,0 +1,20 @@
+<div class="load-wrap m-t-m m-b-m">
+<form class="form-load"
+(drop)="onDrop($event)"
+    (dragover)="onDragOver($event)"
+    (dragleave)="onDragLeave($event)"
+    [ngClass]="{'dragover':onDragOverActive}"
+  >
+        <div class="div-load">
+             <input id="file-input" class="file-input" type="file" name="file" multiple
+    (change)="handleFileInput($event.target.files)">
+    
+             <div>Перетащите файлы в эту область</div>
+             <div>или</div>
+             <label class="load-lable" for="file-input">Выберите файл</label>
+        </div>
+   </form>
+   <div #warning class="warning text-align-center" [ngClass]="{'warning-on': warningActive}">
+       Загрузка доступна только для изображений
+   </div>
+</div>

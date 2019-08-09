@@ -1,0 +1,57 @@
+.load-wrap{
+    display: flex;
+    justify-content: center;
+
+}
+.load-lable{
+    font-weight: bold;  
+}
+.load-lable:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+.file-input{
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    position: absolute;
+    z-index: -10;
+}
+.form-load{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 710px;
+    height: 400px;
+    background-color: rgba(98, 98, 98, 0.40);;
+    outline: 2px dashed #5d5d5d;
+    font-family: 'Segoe UI';
+    color: #1f3c44;
+}
+.file-input:focus + .load-lable {	
+    outline: 1px solid #0078d7;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+.dragover {
+    background-color: #fafafa;
+    outline-offset: -17px;
+}
+.warning{
+    position: fixed;    
+    width: 20vw;
+    top: 5vh;
+    left: 40vw;
+   
+    background-color: rgba(122, 122, 122, 0);
+    color: rgba(0, 0, 0, 0);
+    z-index: -10;
+    padding: 10px;
+}
+
+.warning-on{    
+    transition: 0.5s ease; 
+    background-color: rgba(122, 122, 122, 1);
+    color: #000;
+    z-index: 10;
+}
