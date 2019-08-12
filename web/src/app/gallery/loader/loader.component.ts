@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FileService } from '../../services/file.service';
+import { FileService } from '../../../services/file.service';
 
 @Component({
     moduleId: module.id,

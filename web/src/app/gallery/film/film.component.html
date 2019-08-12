@@ -1,0 +1,25 @@
+<div>
+<div class="gallery">
+<button *ngIf="fileToShow.length>0" (click)="previous()" class="gallery-arrow"><i >&lt;</i></button>
+<div class="text-align-center m-r-n-xl m-l-n-xl">
+    <div *ngIf="fileToShow.length == 0" class="gallery-element_empty"></div>
+    <film-main *ngIf="fileToShow.length>0" [image]="mainImage" [count]="fileToShow.length"
+    [current]="index + 1" ></film-main>
+</div>
+<button *ngIf="fileToShow.length>0" (click)="next()" class="gallery-arrow"><i>&gt;</i></button>
+</div>
+
+<div class="bar">
+    <div class="bar-line">
+        <span  *ngFor="let item of fileToShow; let i = index" class="bar-line-element p-l-xs p-r-xs m-l-xs m-r-xs" [ngClass]="{'bar-line-element_choosen':checkMini(i)}">   
+            <film-mini  [image]="item" (choosenFile)="updateMainFile($event)"> </film-mini>
+        </span>
+        <ng-container *ngIf="fileToShow.length == 0">
+            <span class="bar-line-element bar-line-element_empty m-l-s m-t-s"></span>
+            <span class="bar-line-element bar-line-element_empty m-l-s m-t-s"></span>
+            <span class="bar-line-element bar-line-element_empty m-l-s m-t-s"></span>
+            <span class="bar-line-element bar-line-element_empty m-l-s m-t-s"></span>
+        </ng-container>
+    </div>        
+</div>
+</div>

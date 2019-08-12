@@ -1,16 +1,16 @@
 import { Component, Input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { FileUrl } from '../../models/models';
-import { FileService } from '../../services/file.service';
+import { FileUrl } from '../../../models/models';
+import { FileService } from '../../../services/file.service';
 
 @Component({
     moduleId: module.id,
-    selector: 'gallery-main',
-    templateUrl: 'gallery-main.component.html',
-    styleUrls : ['gallery-main.component.scss'],
+    selector: 'film-main',
+    templateUrl: 'film-main.component.html',
+    styleUrls : ['film-main.component.scss'],
 })
 
-export class GalleryMainComponent {
+export class FilmMainComponent {
     @Input() public image: FileUrl = new FileUrl();
     @Input() public current: number = 0;
     @Input() public count: number = 0;

@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 import { FileService } from '../services/file.service';
-import { AppComponent } from './app.component';
-import { GalleryMainComponent } from './gallery/gallery-main.component';
-import { GalleryMiniComponent } from './gallery/gallery-mini.component';
-import { GalleryComponent } from './gallery/gallery.component';
-import { LoaderComponent } from './loader/loader.component';
+import { mainRouting } from './app.routing';
+import { GalleryComponent } from './gallery';
+import { LoaderComponent } from './gallery/loader/loader.component';
+import { FilmComponent, FilmMainComponent, FilmMiniComponent } from './index';
+import { AppComponent } from './navigation/app.component';
 
 
 
@@ -14,12 +15,12 @@ import { LoaderComponent } from './loader/loader.component';
         AppComponent,
      ],
     declarations: [
-        AppComponent, LoaderComponent, GalleryMainComponent,
-        GalleryComponent, GalleryMiniComponent,
+        AppComponent, LoaderComponent, FilmComponent,
+        FilmMainComponent, FilmMiniComponent, GalleryComponent,
     ],
     providers: [FileService],
     imports: [
-        BrowserModule,
+        BrowserModule, RouterModule, mainRouting,
     ],
 })
 export class AppModule { }
